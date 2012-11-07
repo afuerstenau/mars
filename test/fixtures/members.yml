@@ -6,7 +6,7 @@ one:
   phone: 12345
   email: alex@fuerstenau-clan.de
   street: Max-Tau-Str. 9
-  postcode: 1
+  postcode: 12345
   beitrag: 9.99
   town: Hamburg
 
@@ -16,6 +16,6 @@ two:
   phone: MyString
   email: MyString
   street: MyString
-  postcode: 1
+  postcode: 65432
   beitrag: 9.99
   town: MyString
