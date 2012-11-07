@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  phone: MyString
-  email: MyString
-  street: MyString
+  first_name: Alex
+  last_name: Fuerstenau
+  phone: 12345
+  email: alex@fuerstenau-clan.de
+  street: Max-Tau-Str. 9
   postcode: 1
   beitrag: 9.99
-  town: MyString
+  town: Hamburg
 
 two:
   first_name: MyString
