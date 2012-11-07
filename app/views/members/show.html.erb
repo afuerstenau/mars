@@ -40,6 +40,22 @@
   <%= @member.town %>
 </p>
 
+<table>
+  <tr>
+    <th>First name</th>
+	<th>Last name</th>
+    <th>Klasse</th>
+  </tr>
 
+<% @member.children.each do |child| %>
+  <tr class="<%= cycle( 'list_line_odd', 'list_line_even')%>">
+	<td><%= child.first_name %></td>
+    <td><%= child.last_name %></td>
+    <td><%= child.klasse_bei_eintritt %></td>
+    
+  </tr>
+<% end %>
+</table>
 <%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %>
+<%= link_to 'Back', members_path %> |
+<%= link_to 'Add child', new_member_child_path(@member.id) %>

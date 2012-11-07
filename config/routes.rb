@@ -1,5 +1,10 @@
 Mars::Application.routes.draw do
-  resources :members
+
+  resources :children
+
+  resources :members do
+    resources :children
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
