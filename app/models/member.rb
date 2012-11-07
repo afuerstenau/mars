@@ -3,4 +3,5 @@ class Member < ActiveRecord::Base
   validates :beitrag, :first_name, :last_name, :postcode, :street, :town, presence: true
   validates :beitrag, numericality: {greater_than: 0}
   validates :postcode, numericality: {greater_than: 0}, numericality: {less_than: 100000}
+  validates :postcode, :length => { :is => 5 }
 end
