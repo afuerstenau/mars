@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Member:</b>
+  <%= @child.member_id %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @child.last_name %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @child.first_name %>
+</p>
+
+<p>
+  <b>Klasse bei eintritt:</b>
+  <%= @child.klasse_bei_eintritt %>
+</p>
+
+
+<%= link_to 'Edit', edit_child_path(@child) %> |
+<%= link_to 'Back', children_path %>

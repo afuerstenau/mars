@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  member_id: 1
+  last_name: MyString
+  first_name: MyString
+  klasse_bei_eintritt: MyString
+
+two:
+  member_id: 1
+  last_name: MyString
+  first_name: MyString
+  klasse_bei_eintritt: MyString
