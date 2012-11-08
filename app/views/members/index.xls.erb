@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  	<ss:Styles>
+	     <ss:Style ss:ID="xl1"><ss:NumberFormat ss:Format="Currency"></ss:NumberFormat></ss:Style>
+	</ss:Styles>	
+  <Worksheet ss:Name="Mitgliedsdaten">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Nachname</Data></Cell>
+        <Cell><Data ss:Type="String">Vorname</Data></Cell>
+		<Cell><Data ss:Type="String">Straße</Data></Cell>
+		<Cell><Data ss:Type="String">PLZ</Data></Cell>
+		<Cell><Data ss:Type="String">Ort</Data></Cell>
+		<Cell><Data ss:Type="String">Email</Data></Cell>
+		<Cell><Data ss:Type="String">Telefon</Data></Cell>
+        <Cell><Data ss:Type="String">Beitrag</Data></Cell>
+		<Cell><Data ss:Type="String">Eintrittsdatum</Data></Cell>
+      </Row>
+    <% @members.each do |member| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= member.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= member.last_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= member.first_name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= member.street %></Data></Cell>
+		<Cell><Data ss:Type="Number"><%= member.postcode %></Data></Cell>
+		<Cell><Data ss:Type="String"><%= member.town %></Data></Cell>
+		<Cell><Data ss:Type="String"><%= member.email %></Data></Cell>
+		<Cell><Data ss:Type="String"><%= member.phone %></Data></Cell>
+		<Cell ss:StyleID="xl1"><Data ss:Type="Number"><%= member.beitrag %></Data></Cell>
+		<Cell><Data ss:Type="String"><%= (l member.eintrittsdatum) if !member.eintrittsdatum.nil? %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

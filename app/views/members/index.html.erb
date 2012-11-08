@@ -9,6 +9,7 @@
     <th>Phone</th>
     <th>Email</th>
     <th>Beitrag</th>
+	<th>Eintrittsdatum</th>
     <th></th>
     <th></th>
     <th></th>
@@ -23,6 +24,7 @@
     <td><%= member.phone %></td>
     <td><%= member.email %></td>
     <td><%= number_to_currency(member.beitrag) %></td>
+	<td><%= (l member.eintrittsdatum) if !member.eintrittsdatum.nil? %></td>
     <td class="list_actions">
 	<%= link_to 'Show', member %>
     <%= link_to 'Edit', edit_member_path(member) %>
