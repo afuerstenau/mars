@@ -1,9 +1,10 @@
 Mars::Application.routes.draw do
 
-  resources :children
-
-  resources :members do
+  scope '(:locale)' do
     resources :children
+    resources :members do
+      resources :children
+    end
   end
 
   # The priority is based upon order of creation:
