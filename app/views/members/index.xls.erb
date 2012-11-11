@@ -33,6 +33,10 @@
 		<Cell><Data ss:Type="String"><%= member.phone %></Data></Cell>
 		<Cell ss:StyleID="xl1"><Data ss:Type="Number"><%= member.beitrag %></Data></Cell>
 		<Cell><Data ss:Type="String"><%= (l member.eintrittsdatum) if !member.eintrittsdatum.nil? %></Data></Cell>
+	    <% member.children.each do |child| %>
+			<Cell><Data ss:Type="String"><%= child.last_name %></Data></Cell>
+			<Cell><Data ss:Type="String"><%= child.first_name %></Data></Cell>
+	   <% end %>
       </Row>
     <% end %>
     </Table>
