@@ -55,7 +55,14 @@
     
   </tr>
 <% end %>
+
+<% unless @member.bank_account.nil? %>
+<p>
+	<b>BLZ: </></b><%=@member.bank_account.blz%><b> Konto Nr: </></b><%=@member.bank_account.account_number%><b> Name der Bank: </></b><%=@member.bank_account.bank_name%>
+</p>
+<% end %>
 </table>
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %> |
 <%= link_to 'Add child', new_member_child_path(@member.id) %>
+<%= link_to 'Set bank account', new_member_bank_account_path(@member.id) %>

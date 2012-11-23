@@ -24,7 +24,6 @@ class ChildrenController < ApplicationController
   # GET /children/new.json
   def new
     @child = Child.new
-    puts "Member id"
     puts (params[:member_id])
      @child.member_id=(params[:member_id])
     respond_to do |format|

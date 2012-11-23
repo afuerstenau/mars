@@ -1,9 +1,13 @@
 Mars::Application.routes.draw do
 
+  resources :bank_accounts
+
   scope '(:locale)' do
     resources :children
+    resources :bank_accounts
     resources :members do
       resources :children
+      resources :bank_accounts
     end
   end
 
