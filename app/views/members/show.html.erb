@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" style="<%='display:none' if notice.nil?%>"><%= notice %></p>
 
 <p>
   <b>First name:</b>
@@ -44,7 +44,8 @@
   <tr>
     <th>First name</th>
 	<th>Last name</th>
-    <th>Klasse</th>
+    <th>Klasse bei Eintritt</th>
+	<th>Aktuelle Klasse</th>
   </tr>
 
 <% @member.children.each do |child| %>
@@ -52,7 +53,7 @@
 	<td><%= child.first_name %></td>
     <td><%= child.last_name %></td>
     <td><%= child.klasse_bei_eintritt %></td>
-    
+    <td><%= child.current_class %></td>
   </tr>
 <% end %>
 

@@ -1,3 +1,4 @@
+#Encoding: UTF-8
 require 'test_helper'
 
 class MemberTest < ActiveSupport::TestCase
@@ -11,6 +12,6 @@ class MemberTest < ActiveSupport::TestCase
   test "beitrag must be positive" do
     member = Member.new(beitrag: -1, first_name: "Alex", last_name: "Fuerstenau", street: "Max-Tau-Str. 9", postcode: "22529", town: "Hamburg")
     assert member.invalid?
-    assert_equal ["must be greater than 0"], member.errors[:beitrag]
+    assert_equal ["muss größer als 0 sein"], member.errors[:beitrag]
   end
 end
