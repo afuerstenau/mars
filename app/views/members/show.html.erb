@@ -1,51 +1,52 @@
 <p id="notice" style="<%='display:none' if notice.nil?%>"><%= notice %></p>
 
 <p>
-  <b>First name:</b>
+  <b><%= t('first_name')%></b>
   <%= @member.first_name %>
 </p>
 
 <p>
-  <b>Last name:</b>
+  <b><%= t('last_name')%></b>
   <%= @member.last_name %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b><%= t('phone')%></b>
   <%= @member.phone %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b><%= t('email')%></b>
   <%= @member.email %>
 </p>
 
 <p>
-  <b>Street:</b>
+  <b><%= t('street')%></b>
   <%= @member.street %>
 </p>
 
 <p>
-  <b>Postcode:</b>
+  <b><%= t('postcode')%></b>
   <%= @member.postcode %> <%= @member.town %>
 </p>
 
 <p>
-  <b>Beitrag:</b>
+  <b><%= t('membership_fee')%></b>
   <%= number_to_currency(@member.beitrag) %>
 </p>
 
 <p>
-  <b>Eintrittsdatum:</b>
+  <b><%= t('enrolement_date')%></b>
   <%= @member.eintrittsdatum %>
 </p>
 
 <table>
   <tr>
-    <th>First name</th>
-	<th>Last name</th>
-    <th>Klasse bei Eintritt</th>
-	<th>Aktuelle Klasse</th>
+    <th><%= t('first_name')%></th>
+	<th><%= t('last_name')%></th>
+    <th><%= t('enrolement_grade')%></th>
+	<th><%= t('current_grade')%></th>
+	<th></th>
   </tr>
 
 <% @member.children.each do |child| %>
@@ -54,16 +55,17 @@
     <td><%= child.last_name %></td>
     <td><%= child.klasse_bei_eintritt %></td>
     <td><%= child.current_class %></td>
+	<td><%= link_to t('.edit_child'), edit_child_path(child.id) %></td>
   </tr>
 <% end %>
 
 <% unless @member.bank_account.nil? %>
 <p>
-	<b>BLZ: </></b><%=@member.bank_account.blz%><b> Konto Nr: </></b><%=@member.bank_account.account_number%><b> Name der Bank: </></b><%=@member.bank_account.bank_name%>
+	<b>BLZ: </></b><%=@member.bank_account.blz%><b> Konto Nr: </></b><%=@member.bank_account.account_number%><b> Name der Bank: </></b><%=@member.bank_account.bank_name%> <%= link_to t('.edit_bank_account'), edit_bank_account_path(@member.bank_account.id) %>
 </p>
 <% end %>
 </table>
-<%= link_to 'Edit', edit_member_path(@member) %> |
-<%= link_to 'Back', members_path %> |
-<%= link_to 'Add child', new_member_child_path(@member.id) %>
-<%= link_to 'Set bank account', new_member_bank_account_path(@member.id) %>
+<%= link_to t('edit'), edit_member_path(@member) %> |
+<%= link_to t('back'), members_path %> |
+<%= link_to t('.add_child'), new_member_child_path(@member.id) %>
+<%= link_to t('.add_bank_account'), new_member_bank_account_path(@member.id) if @member.bank_account.nil?%>

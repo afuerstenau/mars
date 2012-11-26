@@ -212,11 +212,18 @@ de:
   phone: "Telefon"
   email: "Email"
   enrolement_date: "Eintrittsdatum"
+  enrolement_grade: "Klasse bei Anmeldung"
+  current_grade: "Aktuelle Klasse"
   show: "Anzeigen"
   edit: "Editieren"
   delete: "Löschen"
   new: "Neu"
+  back: "Zurück"
 
   members:
     index:
       list_members: "Liste der Mitglieder"
+    show:
+      add_child: "Kind zufügen"
+      add_bank_account: "Konto zufügen"
+      edit_bank_account: "Konto editieren"
