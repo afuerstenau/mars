@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :beitrag %><br />
-    <%= f.text_field :beitrag %>
+    <%= number_to_currency(f.text_field :beitrag) %>
   </div>
   <div class="field">
     <%= f.label :town %><br />
