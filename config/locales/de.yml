@@ -201,7 +201,22 @@ de:
   activerecord:
     errors:
       <<: *errors
+
+  members_name: "Mitglieder"
+  last_name: "Nachname"
+  first_name: "Vorname"
+  street: "Straße"
+  postcode: "PLZ"
+  membership_fee: "Beitrag"
+  place: "Ort"
+  phone: "Telefon"
+  email: "Email"
+  enrolement_date: "Eintrittsdatum"
+  show: "Anzeigen"
+  edit: "Editieren"
+  delete: "Löschen"
+  new: "Neu"
+
   members:
     index:
-      last_name: "Nachname"
-      first_name: "Vorname"
+      list_members: "Liste der Mitglieder"

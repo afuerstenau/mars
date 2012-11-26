@@ -1,15 +1,15 @@
-<h1>Listing members</h1>
+<h1><%= t('.list_members') %></h1>
 
 <table>
   <tr>
-    <th><%= t('.last_name') %></th>
-	<th><%= t('.first_name') %></th>
-    <th>Street</th>
-	<th>Town</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Beitrag</th>
-	<th>Eintrittsdatum</th>
+    <th><%= t('last_name') %></th>
+	<th><%= t('first_name') %></th>
+    <th><%= t('street') %></th>
+	<th><%= t('place') %></th>
+    <th><%= t('phone') %></th>
+    <th><%= t('email') %></th>
+    <th><%= t('membership_fee') %></th>
+	<th><%= t('enrolement_date') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -26,9 +26,9 @@
     <td><%= number_to_currency(member.beitrag) %></td>
 	<td><%= (l member.eintrittsdatum) if !member.eintrittsdatum.nil? %></td>
     <td class="list_actions">
-	<%= link_to 'Show', member %>
-    <%= link_to 'Edit', edit_member_path(member) %>
-    <%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to t('show'), member %>
+    <%= link_to t('edit'), edit_member_path(member) %>
+    <%= link_to t('delete'), member, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</td>
   </tr>
 <% end %>
@@ -36,4 +36,4 @@
 
 <br />
 
-<%= link_to 'New Member', new_member_path %>
+<%= link_to t('new'), new_member_path %>
