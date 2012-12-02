@@ -32,7 +32,7 @@
 
 <p>
   <b><%= t('membership_fee')%></b>
-  <%= number_to_currency(@member.beitrag) %>
+  <%= number_to_currency(@member.beitrag) %> <%= t(@member.payment_period) %>
 </p>
 
 <p>
@@ -67,5 +67,5 @@
 </table>
 <%= link_to t('edit'), edit_member_path(@member) %> |
 <%= link_to t('back'), members_path %> |
-<%= link_to t('.add_child'), new_member_child_path(@member.id) %>
+<%= link_to t('.add_child'), new_member_child_path(@member) %>
 <%= link_to t('.add_bank_account'), new_member_bank_account_path(@member.id) if @member.bank_account.nil?%>

@@ -25,6 +25,8 @@ class ChildrenController < ApplicationController
   def new
     @child = Child.new
     @child.member_id=(params[:member_id])
+    member=Member.find(@child.member_id)
+    @child.enrolement_date=member.eintrittsdatum
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @child }

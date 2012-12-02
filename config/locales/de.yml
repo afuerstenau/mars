@@ -212,6 +212,7 @@ de:
   phone: "Telefon"
   email: "Email"
   enrolement_date: "Eintrittsdatum"
+  leaving_date: "Austrittsdatum"
   enrolement_grade: "Klasse bei Anmeldung"
   current_grade: "Aktuelle Klasse"
   show: "Anzeigen"
@@ -219,6 +220,8 @@ de:
   delete: "Löschen"
   new: "Neu"
   back: "Zurück"
+  Monthly: "monatlich"
+  yearly: "jährlich"
 
   members:
     index:

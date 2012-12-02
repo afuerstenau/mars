@@ -16,39 +16,40 @@
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= t('last_name') %><br />
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :street %><br />
+    <%= t('street') %><br />
     <%= f.text_field :street %>
   </div>
   <div class="field">
-    <%= f.label :postcode %><br />
+    <%= t('postcode') %><br />
     <%= f.number_field :postcode %>
   </div>
   <div class="field">
-    <%= f.label :beitrag %><br />
-    <%= number_to_currency(f.text_field :beitrag) %>
-  </div>
-  <div class="field">
-    <%= f.label :town %><br />
+    <%= t('place') %><br />
     <%= f.text_field :town %>
   </div>
   <div class="field">
-    <%= f.label :eintrittsdatum %><br />
+    <%= t('phone') %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= t('email') %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= t('beitrag') %><br />
+    <%= number_to_currency(f.text_field :beitrag) %><%= f.select :payment_period, Member::PAYMENT_PERIODS %>
+  </div>
+  
+  <div class="field">
+    <%= t('enrolement_date') %><br />
     <%= f.text_field :eintrittsdatum %>
   </div>
   <div class="field">
-    <%= f.label :austrittsdatum %><br />
+    <%= t('leaving_date') %><br />
     <%= f.text_field :austrittsdatum %>
   </div>
   <div class="actions">
