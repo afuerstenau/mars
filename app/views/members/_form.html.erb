@@ -41,7 +41,7 @@
   </div>
   <div class="field">
     <%= t('beitrag') %><br />
-    <%= number_to_currency(f.text_field :beitrag) %><%= f.select :payment_period, Member::PAYMENT_PERIODS %>
+    <%= number_to_currency(f.text_field :beitrag) %><%= f.select :payment_period, Member::PAYMENT_PERIODS %><%= f.select :payment_method, Member::PAYMENT_METHODS %>
   </div>
   
   <div class="field">
@@ -51,7 +51,7 @@
   </div>
   <div class="field">
     <%= t('leaving_date') %><br />
-    <%= f.date_select :austrittsdatum %>
+    <%= f.date_select :austrittsdatum, :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,5 +1,5 @@
 <h1><%= t('.list_members') %></h1>
-
+<%= link_to t('new'), new_member_path %>
 <table>
   <tr>
     <th><%= t('last_name') %></th>
@@ -35,5 +35,3 @@
 </table>
 
 <br />
-
-<%= link_to t('new'), new_member_path %>

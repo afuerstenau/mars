@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202200104) do
+ActiveRecord::Schema.define(:version => 20121204191326) do
 
   create_table "bank_accounts", :force => true do |t|
     t.integer  "member_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121202200104) do
     t.date     "eintrittsdatum"
     t.date     "austrittsdatum"
     t.string   "payment_period"
+    t.string   "payment_method"
   end
 
 end

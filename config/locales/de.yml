@@ -220,8 +220,10 @@ de:
   delete: "Löschen"
   new: "Neu"
   back: "Zurück"
-  Monthly: "monatlich"
+  monthly: "monatlich"
   yearly: "jährlich"
+  direct_debit: "Lastschrift"
+  bank_transfer: "Überweisung"
 
   members:
     index:
