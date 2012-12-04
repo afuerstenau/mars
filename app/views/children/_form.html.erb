@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" >
     <%= f.label :member_id %><br />
     <%= f.number_field :member_id %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br />
+    <%= t('first_name') %><br />
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :klasse_bei_eintritt %><br />
+    <%= t('last_name') %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= t('enrolement_grade') %><br />
     <%= f.text_field :klasse_bei_eintritt %>
   </div>
   <div class="field">
-    <%= f.label :enrolement_date %><br />
+    <%= t('enrolement_date') %><br />
     <%= f.text_field :enrolement_date %>
   </div>
   <div class="actions">

@@ -46,11 +46,12 @@
   
   <div class="field">
     <%= t('enrolement_date') %><br />
-    <%= f.text_field :eintrittsdatum %>
+	
+    <%= f.date_select :eintrittsdatum, :default => { :day => 1, :month => 8 } %>
   </div>
   <div class="field">
     <%= t('leaving_date') %><br />
-    <%= f.text_field :austrittsdatum %>
+    <%= f.date_select :austrittsdatum %>
   </div>
   <div class="actions">
     <%= f.submit %>

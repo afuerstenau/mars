@@ -6,20 +6,31 @@
 </p>
 
 <p>
-  <b>Last name:</b>
-  <%= @child.last_name %>
-</p>
-
-<p>
   <b>First name:</b>
   <%= @child.first_name %>
 </p>
 
 <p>
-  <b>Klasse bei eintritt:</b>
+  <b>Last name:</b>
+  <%= @child.last_name %>
+</p>
+
+<p>
+  <b>Klasse bei Eintritt:</b>
   <%= @child.klasse_bei_eintritt %>
 </p>
 
+<p>
+  <b>Aktuelle Klasse:</b>
+  <%= @child.current_class %>
+</p>
+
+<p>
+  <b>Eintrittsdatum:</b>
+  <%= l(@child.enrolement_date) %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_child_path(@child) %> |
-<%= link_to 'Back', children_path %>
+<%= link_to 'Zurück zum Elterndatensatz', member_path(@child.member_id) %>
