@@ -2,7 +2,8 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.order(:last_name)
+    @search = Member.search(params[:q])
+    @members = @search.result
 
     respond_to do |format|
       format.html # index.html.erb

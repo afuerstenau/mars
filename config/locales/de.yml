@@ -224,6 +224,7 @@ de:
   yearly: "jährlich"
   direct_debit: "Lastschrift"
   bank_transfer: "Überweisung"
+  payment_method: "Zahlungsmethode"
 
   members:
     index:

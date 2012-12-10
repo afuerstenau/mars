@@ -1,4 +1,13 @@
 <h1><%= t('.list_members') %></h1>
+
+<%= search_form_for @search do |f| %>
+<div class="field">
+	<%= f.label :payment_method_matches, t("payment_method") %>
+	<%= f.select :payment_method_matches, Member::PAYMENT_METHODS.map { |p| [t(p), p] } %>
+</div>
+<div class="actions"><%= f.submit "Search"%></div>
+<% end %>
+
 <%= link_to t('new'), new_member_path %>
 <table>
   <tr>
@@ -9,6 +18,7 @@
     <th><%= t('phone') %></th>
     <th><%= t('email') %></th>
     <th><%= t('membership_fee') %></th>
+	<th><%= t('payment_method') %></th>
 	<th><%= t('enrolement_date') %></th>
     <th></th>
     <th></th>
@@ -24,6 +34,7 @@
     <td><%= member.phone %></td>
     <td><%= member.email %></td>
     <td><%= number_to_currency(member.beitrag) %></td>
+	<td><%= (t member.payment_method) if !member.payment_method.nil? && !member.payment_method.empty? %></td>
 	<td><%= (l member.eintrittsdatum) if !member.eintrittsdatum.nil? %></td>
     <td class="list_actions">
 		<%= link_to t('show'), member %>

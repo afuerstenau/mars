@@ -1,6 +1,6 @@
 class Member < ActiveRecord::Base
-  PAYMENT_PERIODS = [ "", I18n.t("yearly"), I18n.t("monthly")]
-  PAYMENT_METHODS = [ "", I18n.t("direct_debit"), I18n.t("bank_transfer")]
+  PAYMENT_PERIODS = [ :yearly, :monthly]
+  PAYMENT_METHODS = [  :direct_debit, :bank_transfer]
   has_many :children, dependent: :destroy
   has_one :bank_account, dependent: :destroy
   attr_accessible :beitrag, :email, :first_name, :last_name, :phone, :postcode, :street, :town,

@@ -32,12 +32,12 @@
 
 <p>
   <b><%= t('membership_fee')%></b>
-  <%= number_to_currency(@member.beitrag) %> <%= t(@member.payment_period) %>
+  <%= number_to_currency(@member.beitrag) %> <%= t(@member.payment_period) if !@member.payment_period.nil? %> <%= t(@member.payment_method) if !@member.payment_method.nil? %>
 </p>
 
 <p>
   <b><%= t('enrolement_date')%></b>
-  <%= l(@member.eintrittsdatum) %>
+  <%= l(@member.eintrittsdatum) if !@member.eintrittsdatum.nil? %>
 </p>
 
 <table>
