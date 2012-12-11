@@ -9,6 +9,7 @@ class MembersController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @members }
       format.xls
+      format.csv { send_data @members.to_csv }
     end
   end
 
