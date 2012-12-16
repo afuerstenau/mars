@@ -5,6 +5,10 @@
 	<%= f.label :payment_method_matches, t("payment_method") %>
 	<%= f.select :payment_method_matches, Member::PAYMENT_METHODS.map { |p| [t(p), p] } %>
 </div>
+<div class="field">
+	<%= f.label :last_name_cont, t("last_name") %>
+	<%= f.text_field :last_name_cont %>
+</div>
 <div class="actions"><%= f.submit "Search"%></div>
 <% end %>
 
