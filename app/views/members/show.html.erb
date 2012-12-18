@@ -61,7 +61,7 @@
 
 <% unless @member.bank_account.nil? %>
 <p>
-	<b>BLZ: </></b><%=@member.bank_account.blz%><b> Konto Nr: </></b><%=@member.bank_account.account_number%><b> Name der Bank: </></b><%=@member.bank_account.bank_name%> <%= link_to t('.edit_bank_account'), edit_bank_account_path(@member.bank_account.id) %>
+	<b>BLZ: </></b><%=@member.bank_account.bank_code%><b> Konto Nr: </></b><%=@member.bank_account.account_number%><b> Name der Bank: </></b><%=@member.bank_account.bank_name%> <%= link_to t('.edit_bank_account'), edit_bank_account_path(@member.bank_account.id) %>
 </p>
 <% end %>
 </table>

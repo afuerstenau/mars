@@ -3,11 +3,15 @@
 <%= search_form_for @search do |f| %>
 <div class="field">
 	<%= f.label :payment_method_matches, t("payment_method") %>
-	<%= f.select :payment_method_matches, Member::PAYMENT_METHODS.map { |p| [t(p), p] } %>
+	<%= f.select :payment_method_matches, Member::payments %>
 </div>
 <div class="field">
 	<%= f.label :last_name_cont, t("last_name") %>
 	<%= f.text_field :last_name_cont %>
+</div>
+<div class="field">
+	<%= f.label :bank_account_bank_code_null, t("present") %>
+	<%= f.check_box :bank_account_bank_code_null %>
 </div>
 <div class="actions"><%= f.submit "Search"%></div>
 <% end %>
@@ -15,6 +19,7 @@
 <%= link_to t('new'), new_member_path %>
 <table>
   <tr>
+	<th></th>
     <th><%= t('last_name') %></th>
 	<th><%= t('first_name') %></th>
     <th><%= t('street') %></th>
@@ -29,8 +34,9 @@
     <th></th>
   </tr>
 
-<% @members.each do |member| %>
+<% @members.each_with_index do |member, index| %>
   <tr class="<%= cycle( 'list_line_odd', 'list_line_even')%>">
+    <td><%= index+1 %></td>	  
     <td><%= member.last_name %></td>
 	<td><%= member.first_name %></td>
     <td><%= member.street %></td>

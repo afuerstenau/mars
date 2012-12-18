@@ -2,14 +2,14 @@
 
 one:
   member_id: 1
-  blz: 1
+  bank_code: 1
   account_number: 1
   bank_name: MyString
   account_holder: MyString
 
 two:
   member_id: 1
-  blz: 1
+  bank_code: 1
   account_number: 1
   bank_name: MyString
   account_holder: MyString

@@ -5,13 +5,21 @@ class Child < ActiveRecord::Base
   validates :first_name, :klasse_bei_eintritt, :member_id, :enrolement_date, presence: true
   
   def current_class
-    current_last_year = school_year(DateTime.now).last(4)
-    enrolement_last_year = enrolement_year.last(4)
-    (klasse_bei_eintritt.first.to_i+current_last_year.to_i-enrolement_last_year.to_i).to_s+klasse_bei_eintritt.last
+    if !enrolement_date.nil?
+      current_last_year = school_year(DateTime.now).last(4)
+      enrolement_last_year = enrolement_year.last(4)
+      (klasse_bei_eintritt.first.to_i+current_last_year.to_i-enrolement_last_year.to_i).to_s+klasse_bei_eintritt.last
+    else
+      ""
+    end
   end
   
   def enrolement_year
-    school_year(enrolement_date)
+    if !enrolement_date.nil?
+      school_year(enrolement_date)
+    else
+      ""
+    end
   end
   
   def school_year (selected_date)

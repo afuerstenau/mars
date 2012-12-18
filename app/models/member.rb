@@ -15,6 +15,10 @@ class Member < ActiveRecord::Base
     last_name + "," + first_name
   end
   
+  def self.payments
+    Array payment_methods = [nil] + PAYMENT_METHODS.map { |p| [I18n.t(p), p] }
+  end
+  
   def self.to_csv(options = {:col_sep => ";", :force_quotes => true})
     current_date = DateTime.now.strftime("%Y/%m/%d")
     CSV.generate(options) do |csv| 
@@ -24,14 +28,14 @@ class Member < ActiveRecord::Base
         ,"transactionKey", "transactionCode", "transactionText", "purpose", "purpose1"]
       all.each do |member|
         if !member.bank_account.nil? then
-          blz = member.bank_account.blz
+          bank_code = member.bank_account.bank_code
           account_number = member.bank_account.account_number
         else
-          blz = "Kein Konto"
+          bank_code = "Kein Konto"
           account_number = "Kein Konto"
         end
         csv << ["20050550", "1259125449", "Grundschule, Schulverein d" \
-        , blz, account_number, member.full_name \
+        , bank_code, account_number, member.full_name \
         , current_date, current_date, member.beitrag.truncate, "EUR" \
         , "MSC", "05", "Lastschrift", "Jahresbeitrag Schulverein 2012/2013", "Vielen Dank!"] 
       end

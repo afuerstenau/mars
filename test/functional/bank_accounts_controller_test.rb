@@ -18,7 +18,7 @@ class BankAccountsControllerTest < ActionController::TestCase
 
   test "should create bank_account" do
     assert_difference('BankAccount.count') do
-      post :create, bank_account: { account_holder: @bank_account.account_holder, account_number: @bank_account.account_number, bank_name: @bank_account.bank_name, blz: @bank_account.blz, member_id: @bank_account.member_id }
+      post :create, bank_account: { account_holder: @bank_account.account_holder, account_number: @bank_account.account_number, bank_name: @bank_account.bank_name, bank_code: @bank_account.bank_code, member_id: @bank_account.member_id }
     end
 
     assert_redirected_to bank_account_path(assigns(:bank_account))
@@ -35,7 +35,7 @@ class BankAccountsControllerTest < ActionController::TestCase
   end
 
   test "should update bank_account" do
-    put :update, id: @bank_account, bank_account: { account_holder: @bank_account.account_holder, account_number: @bank_account.account_number, bank_name: @bank_account.bank_name, blz: @bank_account.blz, member_id: @bank_account.member_id }
+    put :update, id: @bank_account, bank_account: { account_holder: @bank_account.account_holder, account_number: @bank_account.account_number, bank_name: @bank_account.bank_name, bank_code: @bank_account.bank_code, member_id: @bank_account.member_id }
     assert_redirected_to bank_account_path(assigns(:bank_account))
   end
 
