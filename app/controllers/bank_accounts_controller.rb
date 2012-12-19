@@ -14,7 +14,7 @@ class BankAccountsController < ApplicationController
   # GET /bank_accounts/1.json
   def show
     @bank_account = BankAccount.find(params[:id])
-
+    @member = Member.find(@bank_account.member_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bank_account }
@@ -26,6 +26,7 @@ class BankAccountsController < ApplicationController
   def new
     @bank_account = BankAccount.new
     @bank_account.member_id=(params[:member_id])
+    @member = Member.find(@bank_account.member_id)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bank_account }
@@ -35,13 +36,13 @@ class BankAccountsController < ApplicationController
   # GET /bank_accounts/1/edit
   def edit
     @bank_account = BankAccount.find(params[:id])
+    @member = Member.find(@bank_account.member_id)
   end
 
   # POST /bank_accounts
   # POST /bank_accounts.json
   def create
     @bank_account = BankAccount.new(params[:bank_account])
-
     respond_to do |format|
       if @bank_account.save
         format.html { redirect_to @bank_account, notice: 'Bank account was successfully created.' }

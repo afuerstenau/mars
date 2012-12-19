@@ -1,12 +1,12 @@
-<h1>Listing bank_accounts</h1>
+<h1><%= t('list_bank_accounts') %></h1>
 
 <table>
   <tr>
     <th>Member</th>
-    <th>Blz</th>
-    <th>Account number</th>
-    <th>Bank name</th>
-    <th>Account holder</th>
+    <th><%= t('bank_code') %></th>
+    <th><%= t('account number') %></th>
+    <th><%= t('bank_name') %></th>
+    <th><%= t('account_holder') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,13 +19,11 @@
     <td><%= bank_account.account_number %></td>
     <td><%= bank_account.bank_name %></td>
     <td><%= bank_account.account_holder %></td>
-    <td><%= link_to 'Show', bank_account %></td>
-    <td><%= link_to 'Edit', edit_bank_account_path(bank_account) %></td>
-    <td><%= link_to 'Destroy', bank_account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('show'), bank_account %></td>
+    <td><%= link_to t('edit'), edit_bank_account_path(bank_account) %></td>
+    <td><%= link_to t('destroy'), bank_account, method: :delete, data: { confirm: t('are_you_sure') } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Bank account', new_bank_account_path %>

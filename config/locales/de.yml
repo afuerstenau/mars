@@ -225,6 +225,16 @@ de:
   direct_debit: "Lastschrift"
   bank_transfer: "Überweisung"
   payment_method: "Zahlungsmethode"
+  editing_bank_account: "Kontodaten editieren"
+  bank_code: "BLZ"
+  bank_name: "Name der Bank"
+  account_number: "Kontonr."
+  account_holder: "Kontoinhaber"
+  list_bank_accounts: "Liste der Konten"
+  new_bank_account: "Neues Konto anlegen"
+  name_of_the_member: "Name des Mitglieds"
+  are_you_sure: "Sind Sie sicher?"
+  destroy: "Löschen"
 
   members:
     index:

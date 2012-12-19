@@ -12,23 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :member_id %><br />
-    <%= f.text_field :member_id %>
+    <b><%= t('name_of_the_member') + ": " + @member.full_name.to_s %></b>	
   </div>
   <div class="field">
-    <%= f.label :bank_code %><br />
+    <%= t('bank_code') %><br />
     <%= f.text_field :bank_code %>
   </div>
   <div class="field">
-    <%= f.label :account_number %><br />
+    <%= t('account_number') %><br />
     <%= f.text_field :account_number %>
   </div>
   <div class="field">
-    <%= f.label :bank_name %><br />
+    <%= t('bank_name') %><br />
     <%= f.text_field :bank_name %>
   </div>
   <div class="field">
-    <%= f.label :account_holder %><br />
+    <%= t('account_holder') %><br />
     <%= f.text_field :account_holder %>
   </div>
   <div class="actions">
