@@ -10,6 +10,7 @@ class MembersController < ApplicationController
       format.json { render json: @members }
       format.xls
       format.csv { send_data @members.to_csv }
+      format.dtaus { send_data @members.to_dtaus }
     end
   end
 
