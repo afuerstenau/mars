@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field" >
-    <%= f.label :member_id %><br />
-    <%= f.number_field :member_id %>
+  <div class="field">
+    <b><%= t('name_of_the_member') + ": " + @member.full_name.to_s %></b>	
   </div>
+ 
+   <%= f.hidden_field :member_id %>
+ 
   <div class="field">
     <%= t('first_name') %><br />
     <%= f.text_field :first_name %>
@@ -29,7 +31,7 @@
   </div>
   <div class="field">
     <%= t('enrolement_date') %><br />
-    <%= f.text_field :enrolement_date %>
+    <%= f.date_select :enrolement_date %>
   </div>
   <div class="actions">
     <%= f.submit %>

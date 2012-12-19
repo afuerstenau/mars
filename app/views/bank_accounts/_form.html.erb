@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+<%= f.hidden_field :member_id %>
+
   <div class="field">
     <b><%= t('name_of_the_member') + ": " + @member.full_name.to_s %></b>	
   </div>

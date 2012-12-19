@@ -1,6 +1,6 @@
-<h1>Editing member</h1>
+<h1><%= t('edit_member')%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @member %> |
-<%= link_to 'Back', members_path %>
+<%= link_to t('show'), @member %> |
+<%= link_to t('list_members'), members_path %>

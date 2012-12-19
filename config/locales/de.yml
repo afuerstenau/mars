@@ -235,10 +235,13 @@ de:
   name_of_the_member: "Name des Mitglieds"
   are_you_sure: "Sind Sie sicher?"
   destroy: "Löschen"
+  edit_child: "Kind editieren"
+  list_children: "Liste der Kinder"
+  back_to_parent_dataset: "Zurück zum Elterndatensatz"
+  edit_member: "Mitglied editieren"
+  list_members: "Liste der Mitglieder"
 
   members:
-    index:
-      list_members: "Liste der Mitglieder"
     show:
       add_child: "Kind zufügen"
       add_bank_account: "Konto zufügen"

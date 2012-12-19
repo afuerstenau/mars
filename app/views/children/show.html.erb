@@ -1,36 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Member:</b>
-  <%= @child.member_id %>
+	<b><%= t('name_of_the_member') + ": " + @member.full_name.to_s %></b>	
 </p>
 
 <p>
-  <b>First name:</b>
+  <b><%= t('first_name') %>:</b>
   <%= @child.first_name %>
 </p>
 
 <p>
-  <b>Last name:</b>
+  <b><%= t('last_name') %>:</b>
   <%= @child.last_name %>
 </p>
 
 <p>
-  <b>Klasse bei Eintritt:</b>
+  <b><%= t('enrolement_grade') %></b>
   <%= @child.klasse_bei_eintritt %>
 </p>
 
 <p>
-  <b>Aktuelle Klasse:</b>
+  <b><%= t('current_grade') %>:</b>
   <%= @child.current_class %>
 </p>
 
 <p>
-  <b>Eintrittsdatum:</b>
+  <b><%= t('enrolement_date') %>:</b>
   <%= l(@child.enrolement_date) %>
 </p>
 
 
 
-<%= link_to 'Edit', edit_child_path(@child) %> |
-<%= link_to 'Zurück zum Elterndatensatz', member_path(@child.member_id) %>
+<%= link_to t('edit'), edit_child_path(@child) %> |
+<%= link_to t('back_to_parent_dataset'), member_path(@child.member_id) %>

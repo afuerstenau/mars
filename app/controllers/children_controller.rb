@@ -14,6 +14,7 @@ class ChildrenController < ApplicationController
   # GET /children/1.json
   def show
     @child = Child.find(params[:id])
+    @member = Member.find(@child.member_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @child }
@@ -25,8 +26,8 @@ class ChildrenController < ApplicationController
   def new
     @child = Child.new
     @child.member_id=(params[:member_id])
-    member=Member.find(@child.member_id)
-    @child.enrolement_date=member.eintrittsdatum
+    @member=Member.find(@child.member_id)
+    @child.enrolement_date=@member.eintrittsdatum
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @child }
@@ -38,6 +39,7 @@ class ChildrenController < ApplicationController
   def add
     @child = Child.new
     @child.member_id=(params[:id])
+    @member = Member.find(@child.member_id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,13 +50,15 @@ class ChildrenController < ApplicationController
   # GET /children/1/edit
   def edit
     @child = Child.find(params[:id])
+    @member = Member.find(@child.member_id)
   end
 
   # POST /children
   # POST /children.json
   def create
     @child = Child.new(params[:child])
-
+    @member = Member.find(@child.member_id)
+    
     respond_to do |format|
       if @child.save
         format.html { redirect_to @child, notice: 'Child was successfully created.' }
@@ -70,7 +74,8 @@ class ChildrenController < ApplicationController
   # PUT /children/1.json
   def update
     @child = Child.find(params[:id])
-
+    @member = Member.find(@child.member_id)
+    
     respond_to do |format|
       if @child.update_attributes(params[:child])
         format.html { redirect_to @child, notice: 'Child was successfully updated.' }

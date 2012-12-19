@@ -49,7 +49,7 @@
     <td class="list_actions">
 		<%= link_to t('show'), member %>
     <%= link_to t('edit'), edit_member_path(member) %>
-    <%= link_to t('delete'), member, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to t('delete'), member, method: :delete, data: { confirm: t('are_you_sure') } %>
 	</td>
   </tr>
 <% end %>
