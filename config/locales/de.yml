@@ -240,6 +240,20 @@ de:
   back_to_parent_dataset: "Zurück zum Elterndatensatz"
   edit_member: "Mitglied editieren"
   list_members: "Liste der Mitglieder"
+  list_school_years: "Liste der Schuljahre"
+  edit_school_year: "Schuljahr editieren"
+  new_school_year: "Neues Schuljahr anlegen"
+  schoolyears_name: "Schuljahre"
+  start_date: "Startdatum"
+  end_date: "Enddatum"
+  new_school_year: "Neues Schuljahr anlegen"
+  add_membership_fee: "Neue Beitragszahlung zufügen"
+  payment_date: "Zahldatum"
+  new_membership_fee: "Neue Beitragszahlung anlegen"
+  list_membership_fees: "Liste der Beitragszahlungen"
+  edit_payment_fee: "Beitragszahlung editieren"
+  school_year: "Schuljahr"
+  membership_fees_name: "Beitragszahlungen"
 
   members:
     show:

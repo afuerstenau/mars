@@ -3,9 +3,12 @@ Mars::Application.routes.draw do
   scope '(:locale)' do
     resources :children
     resources :bank_accounts
+    resources :school_years
+    resources :membership_fees
     resources :members do
       resources :children
       resources :bank_accounts
+      resources :membership_fees
     end
   end
 

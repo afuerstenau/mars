@@ -1,0 +1,8 @@
+<tr class="<%= cycle( 'list_line_odd', 'list_line_even')%>">
+  <td><%= membership_fee.school_year.full_name %></td>
+  <td><%= t( membership_fee.payment_method) %></td>
+  <td><%= l( membership_fee.payment_date) %></td>
+  <td><%= number_to_currency(membership_fee.fee) %></td>
+  <td><%= link_to t('edit_payment_fee'), edit_membership_fee_path(membership_fee.id) %></td>
+  <td><%= link_to t('delete'), membership_fee, method: :delete, data: { confirm: t('are_you_sure') } %></td>
+</tr>

@@ -1,0 +1,24 @@
+localBankCode -> BLZ Haspa 20050550
+localAccountNumber -> Konto Nr. Haspa 1259125449
+localName -> Grundschule, Schulverein d
+
+remoteBankCode -> 
+remoteAccountNumber ->
+remoteName -> Nachname, Vorname
+# uniqueId -> 0
+# idForApplication -> 0
+# groupId -> 0
+valutaDate -> 20.12.12
+date -> 20.12.12
+value_value ->
+value_currency -> EUR
+# textKey -> 0
+# textKeyExt -> 0
+transactionKey -> MSC
+transactionCode -> ?
+transactionText -> ?
+purpose -> Jahresbeitrag Schulverein 2012/2013
+purpose1 -> Vielen Dank!
+
+Alles in doppelten Anführungsstrichen
+Semikolon getrennt

@@ -57,7 +57,6 @@ class ChildrenController < ApplicationController
   # POST /children.json
   def create
     @child = Child.new(params[:child])
-    @member = Member.find(@child.member_id)
     
     respond_to do |format|
       if @child.save

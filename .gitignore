@@ -16,3 +16,11 @@
 
 # Ignore cache files
 /.sass-cache/*
+
+.idea/.generators
+
+DTAUS0.TXT
+
+.idea/*
+
+Aufrufe.txt

@@ -1,0 +1,38 @@
+<%= form_for(@membership_fee) do |f| %>
+    <% if @membership_fee.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@membership_fee.errors.count, "error") %> prohibited this membership_fee from being saved:</h2>
+
+          <ul>
+            <% @membership_fee.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :member_id %>
+
+    <div class="field">
+      <b><%= t('name_of_the_member') + ": " + @member.full_name.to_s %></b>
+    </div>
+    <div class="field">
+      <%= t('school_year') %><br />
+      <%= f.select :school_year_id, SchoolYear::all.map { |school_year| [school_year.full_name, school_year.id] } %>
+    </div>
+    <div class="field">
+      <%= t('membership_fee') %><br />
+      <%= number_to_currency(f.text_field :fee) %>
+    </div>
+    <div class="field">
+      <%= t('payment_date') %><br />
+      <%= f.date_select :payment_date %>
+    </div>
+    <div class="field">
+      <%= t('payment_method') %><br />
+      <%= f.select :payment_method, Member::PAYMENT_METHODS.map { |p| [t(p), p] } %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

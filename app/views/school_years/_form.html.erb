@@ -1,0 +1,25 @@
+<%= form_for(@school_year) do |f| %>
+  <% if @school_year.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@school_year.errors.count, "error") %> prohibited this school_year from being saved:</h2>
+
+      <ul>
+      <% @school_year.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= t('start_date') %><br />
+    <%= f.date_select :start_date, :default => { :day => 1, :month => 8 } %>
+  </div>
+  <div class="field">
+    <%= t('end_date') %><br />
+    <%= f.date_select :end_date, :default => { :day => 31, :month => 7, :year => Time.now.year+1 } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

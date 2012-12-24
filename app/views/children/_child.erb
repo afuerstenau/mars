@@ -1,0 +1,7 @@
+<tr class="<%= cycle( 'list_line_odd', 'list_line_even')%>">
+  <td><%= child.first_name %></td>
+  <td><%= child.last_name %></td>
+  <td><%= child.klasse_bei_eintritt %></td>
+  <td><%= child.current_class %></td>
+  <td><%= link_to t('edit_child'), edit_child_path(child.id) %></td>
+</tr>

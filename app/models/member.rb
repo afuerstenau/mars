@@ -5,6 +5,7 @@ class Member < ActiveRecord::Base
   PAYMENT_METHODS = [  :direct_debit, :bank_transfer]
   has_many :children, dependent: :destroy
   has_one :bank_account, dependent: :destroy
+  has_many :membership_fees, dependent: :destroy
   attr_accessible :beitrag, :email, :first_name, :last_name, :phone, :postcode, :street, :town,
   :eintrittsdatum, :austrittsdatum, :payment_period, :payment_method
   attr_reader :full_name
@@ -56,15 +57,16 @@ class Member < ActiveRecord::Base
     # LASTSCHRIFT
     # Erstellen eines Datensatzes für eine Lastschrift
     lastschrift = DTAUS::Datensatz.new(:lastschrift, konto_auftraggeber)
-
+    # Rails.logger = Logger.new("/Users/afuerstenau/Projects/mars/log/mylog.log")
+    
     all.each do |member|
       if !member.bank_account.nil? then
-        bank_code = 
-        account_number = 
+        kontoinhaber = member.full_name
+        kontoinhaber = member.bank_account.account_holder if member.bank_account.account_holder != "s.o."
         konto_kunde = DTAUS::Konto.new(
           :kontonummer => member.bank_account.account_number, 
           :blz => member.bank_account.bank_code, 
-          :kontoinhaber => member.full_name, 
+          :kontoinhaber => kontoinhaber, 
           :bankname => member.bank_account.bank_name,
           :kundennummer => member.id
         )

@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216194833) do
+ActiveRecord::Schema.define(:version => 20121221182842) do
 
   create_table "bank_accounts", :force => true do |t|
     t.integer  "member_id"
-    t.string   "account_number"
+    t.string   "account_number", :limit => 10
     t.string   "bank_name"
     t.string   "account_holder"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.string   "bank_code"
   end
 
@@ -48,6 +48,23 @@ ActiveRecord::Schema.define(:version => 20121216194833) do
     t.date     "austrittsdatum"
     t.string   "payment_period"
     t.string   "payment_method"
+  end
+
+  create_table "membership_fees", :force => true do |t|
+    t.integer  "member_id"
+    t.integer  "school_year_id"
+    t.decimal  "fee",            :precision => 8, :scale => 2
+    t.date     "payment_date"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.string   "payment_method"
+  end
+
+  create_table "school_years", :force => true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

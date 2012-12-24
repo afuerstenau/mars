@@ -39,33 +39,24 @@
   <b><%= t('enrolement_date')%></b>
   <%= l(@member.eintrittsdatum) if !@member.eintrittsdatum.nil? %>
 </p>
-
-<table>
-  <tr>
-    <th><%= t('first_name')%></th>
-	<th><%= t('last_name')%></th>
-    <th><%= t('enrolement_grade')%></th>
-	<th><%= t('current_grade')%></th>
-	<th></th>
-  </tr>
-
-<% @member.children.each do |child| %>
-  <tr class="<%= cycle( 'list_line_odd', 'list_line_even')%>">
-	<td><%= child.first_name %></td>
-    <td><%= child.last_name %></td>
-    <td><%= child.klasse_bei_eintritt %></td>
-    <td><%= child.current_class %></td>
-	<td><%= link_to t('edit_child'), edit_child_path(child.id) %></td>
-  </tr>
-<% end %>
-
 <% unless @member.bank_account.nil? %>
-<p>
-	<b>BLZ: </></b><%=@member.bank_account.bank_code%><b> Konto Nr: </></b><%=@member.bank_account.account_number%><b> Name der Bank: </></b><%=@member.bank_account.bank_name%> <%= link_to t('.edit_bank_account'), edit_bank_account_path(@member.bank_account.id) %>
-</p>
+    <p>
+      <b>BLZ:</b><%=@member.bank_account.bank_code%><b> Konto Nr:</b><%=@member.bank_account.account_number%><b> Name der Bank:</b><%=@member.bank_account.bank_name%> <%= link_to t('.edit_bank_account'), edit_bank_account_path(@member.bank_account.id) %>
+    </p>
 <% end %>
+
+<p><b><%= t('list_children')%></b>
+<table>
+    <%=  render(@member.children) %>
 </table>
+</p>
+<p><b><%= t('list_membership_fees')%></b>
+<table>
+<%=  render(@member.membership_fees) %>
+</table>
+</p>
 <%= link_to t('edit'), edit_member_path(@member) %> |
 <%= link_to t('back'), members_path %> |
 <%= link_to t('.add_child'), new_member_child_path(@member) %>
 <%= link_to t('.add_bank_account'), new_member_bank_account_path(@member.id) if @member.bank_account.nil?%>
+<%= link_to t('add_membership_fee'), new_member_membership_fee_path(@member.id) %>

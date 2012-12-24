@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('start_date') %>:</b>
+  <%= l @school_year.start_date %>
+</p>
+
+<p>
+  <b><%= t('end_date') %>:</b>
+  <%= l @school_year.end_date %>
+</p>
+
+
+<%= link_to t('edit'), edit_school_year_path(@school_year) %> |
+<%= link_to t('list_school_years'), school_years_path %>

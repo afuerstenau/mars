@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Member:</b>
+  <%= @membership_fee.member_id %>
+</p>
+
+<p>
+  <b>School year:</b>
+  <%= @membership_fee.school_year_id %>
+</p>
+
+<p>
+  <b>Fee:</b>
+  <%= @membership_fee.fee %>
+</p>
+
+<p>
+  <b>Payment date:</b>
+  <%= @membership_fee.payment_date %>
+</p>
+
+<p>
+  <b>Payment type:</b>
+  <%= @membership_fee.payment_method %>
+</p>
+
+
+<%= link_to 'Edit', edit_membership_fee_path(@membership_fee) %> |

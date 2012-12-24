@@ -1,0 +1,29 @@
+<h1><%= t('list_membership_fees') %></h1>
+
+<table>
+  <tr>
+    <th><%= t('name_of_the_member') %></th>
+    <th><%= t('school_year') %></th>
+    <th><%= t('membership_fee') %></th>
+    <th><%= t('payment_date') %></th>
+    <th><%= t('payment_method') %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @membership_fees.each do |membership_fee| %>
+  <tr>
+    <td><%= Member.find(membership_fee.member_id).full_name %></td>
+    <td><%= SchoolYear.find(membership_fee.school_year_id).full_name %></td>
+    <td><%= number_to_currency(membership_fee.fee) %></td>
+    <td><%= l(membership_fee.payment_date) %></td>
+    <td><%= t(membership_fee.payment_method) %></td>
+    <td><%= link_to 'Show', membership_fee %></td>
+    <td><%= link_to 'Edit', edit_membership_fee_path(membership_fee) %></td>
+    <td><%= link_to 'Destroy', membership_fee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
