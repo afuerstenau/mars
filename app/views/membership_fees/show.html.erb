@@ -1,29 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Member:</b>
-  <%= @membership_fee.member_id %>
+  <b><%= t('name_of_the_member') + ": " + @membership_fee.member_name %></b>
 </p>
 
 <p>
-  <b>School year:</b>
-  <%= @membership_fee.school_year_id %>
+  <b><%= t('school_year') + ": " + @membership_fee.school_year %></b>
 </p>
 
 <p>
-  <b>Fee:</b>
-  <%= @membership_fee.fee %>
+  <b><%= t('membership_fee') %>:</b>
+  <%= number_to_currency(@membership_fee.fee) %>
 </p>
 
 <p>
-  <b>Payment date:</b>
-  <%= @membership_fee.payment_date %>
+  <b><%= t('payment_date') %>:</b>
+  <%= l(@membership_fee.payment_date) %>
 </p>
 
 <p>
-  <b>Payment type:</b>
-  <%= @membership_fee.payment_method %>
+  <b><%= t('payment_method') %>:</b>
+  <%= t(@membership_fee.payment_method) %>
 </p>
 
 
-<%= link_to 'Edit', edit_membership_fee_path(@membership_fee) %> |
+<%= link_to t('edit'), edit_membership_fee_path(@membership_fee) %>

@@ -14,7 +14,7 @@
     <%= f.hidden_field :member_id %>
 
     <div class="field">
-      <b><%= t('name_of_the_member') + ": " + @member.full_name.to_s %></b>
+      <b><%= t('name_of_the_member') + ": " + @member.full_name.to_s unless @member.nil?%></b>
     </div>
     <div class="field">
       <%= t('school_year') %><br />

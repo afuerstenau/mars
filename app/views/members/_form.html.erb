@@ -40,7 +40,7 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= t('beitrag') %><br />
+    <%= t('membership_fee') %><br />
     <%= number_to_currency(f.text_field :beitrag) %><%= f.select :payment_period, Member::PAYMENT_PERIODS.map { |p| [t(p), p] } %><%= f.select :payment_method, Member::PAYMENT_METHODS.map { |p| [t(p), p] } %>
   </div>
   

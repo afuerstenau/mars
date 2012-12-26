@@ -254,6 +254,9 @@ de:
   edit_payment_fee: "Beitragszahlung editieren"
   school_year: "Schuljahr"
   membership_fees_name: "Beitragszahlungen"
+  new_child: "Neues anlegen"
+  new_member: "Neues Mitglied anlegen"
+  edit_membership_fee: "Beitragszahlung editieren"
 
   members:
     show:

@@ -14,14 +14,14 @@
 
 <% @membership_fees.each do |membership_fee| %>
   <tr>
-    <td><%= Member.find(membership_fee.member_id).full_name %></td>
-    <td><%= SchoolYear.find(membership_fee.school_year_id).full_name %></td>
+    <td><%= membership_fee.member_name %></td>
+    <td><%= membership_fee.school_year %></td>
     <td><%= number_to_currency(membership_fee.fee) %></td>
     <td><%= l(membership_fee.payment_date) %></td>
     <td><%= t(membership_fee.payment_method) %></td>
-    <td><%= link_to 'Show', membership_fee %></td>
-    <td><%= link_to 'Edit', edit_membership_fee_path(membership_fee) %></td>
-    <td><%= link_to 'Destroy', membership_fee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to t('show'), membership_fee %></td>
+    <td><%= link_to t('edit'), edit_membership_fee_path(membership_fee) %></td>
+    <td><%= link_to t('destroy'), membership_fee, method: :delete, data: { confirm: t('are_you_sure') } %></td>
   </tr>
 <% end %>
 </table>

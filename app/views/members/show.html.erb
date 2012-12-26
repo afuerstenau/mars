@@ -49,12 +49,10 @@
 <table>
     <%=  render(@member.children) %>
 </table>
-</p>
 <p><b><%= t('list_membership_fees')%></b>
 <table>
 <%=  render(@member.membership_fees) %>
 </table>
-</p>
 <%= link_to t('edit'), edit_member_path(@member) %> |
 <%= link_to t('back'), members_path %> |
 <%= link_to t('.add_child'), new_member_child_path(@member) %>

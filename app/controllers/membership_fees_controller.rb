@@ -15,6 +15,7 @@ class MembershipFeesController < ApplicationController
   def show
     @membership_fee = MembershipFee.find(params[:id])
     @member = Member.find(@membership_fee.member_id)
+    @school_year = SchoolYear.find(@membership_fee.school_year_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @membership_fee }
