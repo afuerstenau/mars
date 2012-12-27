@@ -21,6 +21,10 @@ class Member < ActiveRecord::Base
     Array payment_methods = [nil] + PAYMENT_METHODS.map { |p| [I18n.t(p), p] }
   end
 
+  def payment_for_current_year
+    MembershipFee.where(member_id: id, school_year_id: SchoolYear.current_school_year.id)
+  end
+
   def self.to_csv(options = {:col_sep => ";", :force_quotes => true})
     current_date = DateTime.now.strftime("%Y/%m/%d")
     CSV.generate(options) do |csv|

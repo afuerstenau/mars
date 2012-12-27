@@ -7,4 +7,8 @@ class SchoolYear < ActiveRecord::Base
   def full_name
     start_date.year.to_s + "/" + end_date.year.to_s
   end
+
+  def self.current_school_year
+    SchoolYear.first(:order => 'end_date DESC')
+  end
 end

@@ -35,7 +35,7 @@
   </tr>
 
 <% @members.each_with_index do |member, index| %>
-  <tr class="<%= cycle( 'list_line_odd', 'list_line_even')%>">
+    <tr class="<%= member.payment_for_current_year.exists? ? 'list_line_payed' : 'list_line_not_payed'  %>">
     <td><%= index+1 %></td>	  
     <td><%= member.last_name %></td>
 	<td><%= member.first_name %></td>

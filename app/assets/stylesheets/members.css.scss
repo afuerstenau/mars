@@ -33,11 +33,11 @@
     padding-left: 1em;
   }
 
-  .list_line_even {
-    background:   #dddddd;
+  .list_line_not_payed {
+    background:   #AA5555;
   }
-  .list_line_odd {
-    background:   #cccccc;
+  .list_line_payed {
+    background:   #55AA55;
   }
 }
 /* END_HIGHLIGHT */
