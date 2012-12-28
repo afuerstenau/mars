@@ -1,4 +1,6 @@
 class MembershipFee < ActiveRecord::Base
+  scope :current_school_year, lambda { where("school_year_id", SchoolYear.current_school_year.id ) }
+
   belongs_to :member
   belongs_to :school_year
   attr_accessible :fee, :member_id, :payment_date, :payment_method, :school_year_id

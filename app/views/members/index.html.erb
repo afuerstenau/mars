@@ -16,6 +16,14 @@
 <div class="actions"><%= f.submit "Search"%></div>
 <% end %>
 
+<%= form_for :search2, :method => :get do |f|  %>
+    <div class="field">
+      <%= f.label :tardy, "tardy" %>
+      <%= f.check_box :tardy %>
+    </div>
+    <div class="actions"><%= f.submit "Search"%></div>
+<% end %>
+
 <%= link_to t('new'), new_member_path %>
 <table>
   <tr>

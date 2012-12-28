@@ -2,8 +2,15 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @search = Member.search(params[:q])
-    @members = @search.result
+   search2 = params[:search2]
+    tardy = search2[:tardy] unless search2.nil?
+    if tardy == "1"
+     @search = Member.search(params[:q])
+     @members = Member.find_all_tardy_members()
+    else
+      @search = Member.search(params[:q])
+      @members = @search.result
+    end
 
     respond_to do |format|
       format.html # index.html.erb

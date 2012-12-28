@@ -87,4 +87,9 @@ class Member < ActiveRecord::Base
     end
     return lastschrift
   end
+
+  def self.find_all_tardy_members
+   members_have_payed = joins(:membership_fees).merge( MembershipFee.current_school_year )
+   Member.where("id NOT IN (?)", members_have_payed)
+  end
 end
